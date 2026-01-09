@@ -1,6 +1,7 @@
 import "./App.css";
 import Counter from "./components/Counter/Counter";
 import Goodbye from "./components/Goodbye/Goodbye";
+import IdealWeightCalculator from "./components/IdealWeightCalculator/idealWeightCalculator";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import Tool from "./components/Tool/Tool";
 
@@ -25,8 +26,11 @@ function App() {
       <Counter />
 
       <Tool />
+      
+      <IdealWeightCalculator/>
 
       <ProfileCard {...johnDawson} />
+
       </>
   );
 }
