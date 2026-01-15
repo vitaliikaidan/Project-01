@@ -1,0 +1,12 @@
+import { Link } from "react-router-dom";
+import RandomDog from "../../components/RandomDog/RandomDog";
+
+export default function NotFound() {
+  return (
+    <div>
+      <h2>Page Not Found</h2>
+      <Link to="/">Go back to home page</Link>
+      <RandomDog />
+    </div>
+  );
+}

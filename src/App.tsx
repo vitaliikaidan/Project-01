@@ -1,48 +1,56 @@
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Counter from "./components/Counter/Counter";
-import Goodbye from "./components/Goodbye/Goodbye";
+import GenderReveal from "./components/GenderReveal/GenderReveal";
+import Nationalize from "./components/Nationalize/Nationalize";
+import SpaceMissionForm from "./components/SpaceMissionForm/SpaceMissionForm";
+import Home from "./pages/Home/Home";
+import NotFound from "./pages/NotFound/NotFound";
+import Layout from "./layouts/Layout";
+import Contacts from "./pages/Contacts/Contacts";
+import About from "./pages/About/About";
+import ProfileLayout from "./layouts/ProfileLayout";
+import Profile from "./pages/Profile/Profile";
+import ProductPage from "./pages/ProductPage/ProductPage";
+import ProfileData from "./pages/ProfileData/Profile";
+import Settings from "./pages/Settings/Setings";
+import CarPage from "./pages/CarPage/CarPage";
 import IdealWeightCalculator from "./components/IdealWeightCalculator/idealWeightCalculator";
-import ProfileCard from "./components/ProfileCard/ProfileCard";
-import Tool from "./components/Tool/Tool";
+import UsersPage from "./pages/UsersPage/UsersPage";
+
 
 function App() {
-  const johnDawson = {
-    avatar:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7x7RFFT8-4WY26mVJxhk5lvmoTIhb_0NzAQ&s",
-    name: "John Dawson",
-    description: "Full Stack Dev",
-  };
   return (
     <>
-      <p className="heading">Hello, World!</p>
-      {/* props */}
-      {/* <Greetings name="Alisher" />
-      <Greetings name="Vadim" /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/gender-reveal" element={<GenderReveal />} />
+            <Route path="/nationalize" element={<Nationalize />} />
+            <Route path="/counter" element={<Counter />} />
+            <Route path="/space-mission" element={<SpaceMissionForm />} />
+            <Route path="/ideal-weight" element={<IdealWeightCalculator />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/profile" element={<ProfileLayout />}>
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile/data" element={<ProfileData />} />
+              <Route path="/profile/settings" element={<Settings />} />
+            </Route>
+            <Route path="/products/:id" element={<ProductPage />}></Route>
+            <Route path="/cars/:model" element={<CarPage />}></Route>
+            <Route path="/users" element={<UsersPage />} />
+          </Route>
+        
+          <Route path="*" element={<NotFound />} />
+          
 
-      <Goodbye familyName="Khamidov" score={90} />
-      <Goodbye familyName="Khamidov" />
-
-      <Counter />
-      <Counter />
-
-      <Tool />
-      
-      <IdealWeightCalculator/>
-
-      <ProfileCard {...johnDawson} />
-
-      </>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
 export default App;
 
-// Задание
-// Создайте компонент Goodbye
-// компонент должен возвращать параграф с текстом Goodbye, <family_name>
-
-// соответственно у компонента должен быть пропс familyName
-// Создайте два элемента с разными фамилиями
-
-// дополнительно добавьте score - числовой пояс
-// Goodbye, John, your score is 97
+// wildcard
