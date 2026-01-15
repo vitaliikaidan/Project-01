@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import s from "./NavBar.module.css";
 import clsx from "clsx";
+import { ROUTES as R } from "../../shared/routes";
 
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   clsx(s.link, isActive && s.active);
@@ -8,25 +9,25 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
 export default function NavBar() {
   return (
     <nav className={s.container}>
-      <NavLink to={"/"} className={navLinkClass}>
+      <NavLink to={R.HOME} className={navLinkClass}>
         Home
       </NavLink>
-      <NavLink to={"/counter"} className={navLinkClass}>
+      <NavLink to={R.COUNTER} className={navLinkClass}>
         Counter
       </NavLink>
-      <NavLink to={"/nationalize"} className={navLinkClass}>
+      <NavLink to={R.NATIONALIZE} className={navLinkClass}>
         Nationalize
       </NavLink>
-      <NavLink to={"/space-mission"} className={navLinkClass}>
+      <NavLink to={R.SPACE_MISSION} className={navLinkClass}>
         Space Mission
       </NavLink>
-      <NavLink to={"/contacts"} className={navLinkClass}>
+      <NavLink to={R.CONTACTS} className={navLinkClass}>
         Contacts
       </NavLink>
-      <NavLink to={"/about"} className={navLinkClass}>
+      <NavLink to={R.ABOUT} className={navLinkClass}>
         About
       </NavLink>
-      <NavLink to={"/profile"} className={navLinkClass}>
+      <NavLink to={R.PROFILE} className={navLinkClass}>
         Profile
       </NavLink>
     </nav>
