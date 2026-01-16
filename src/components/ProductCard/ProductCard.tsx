@@ -1,7 +1,8 @@
 import type { FC } from "react";
-import type Product from "../types/Product";
+
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../shared/routes";
+import type Product from "../types/Product";
 
 export const ProductCard: FC<Product> = (product) => {
   return (

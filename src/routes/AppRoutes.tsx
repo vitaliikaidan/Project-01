@@ -1,7 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Counter from "../components/Counter/Counter";
 import GenderReveal from "../components/GenderReveal/GenderReveal";
-import IdealWeightCalculator from "../components/IdealWeightCalculator/idealWeightCalculator";
 import Nationalize from "../components/Nationalize/Nationalize";
 import SpaceMissionForm from "../components/SpaceMissionForm/SpaceMissionForm";
 import Layout from "../layouts/Layout";
@@ -13,10 +12,13 @@ import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import ProductPage from "../pages/ProductPage/ProductPage";
 import Profile from "../pages/Profile/Profile";
+import UsersPage from "../pages/UsersPage/UsersPage";
+import { ROUTES as R } from "../shared/routes";
+import IdealWeightCalculator from "../components/IdealWeightCalculator/idealWeightCalculator";
 import ProfileData from "../pages/ProfileData/Profile";
 import Settings from "../pages/Settings/Setings";
-import UsersPage from "../pages/UsersPage/UsersPage";
-import { ROUTES  as R} from "../shared/routes";
+import UserPage from "../pages/UserPage/UserPage";
+
 
 export default function AppRoutes() {
   return (
@@ -37,10 +39,11 @@ export default function AppRoutes() {
         </Route>
         <Route path={R.PRODUCT(":id")} element={<ProductPage />}></Route>
         <Route path="/cars/:model" element={<CarPage />}></Route>
-        <Route path="/users" element={<UsersPage />} />
+        <Route path={R.USERS} element={<UsersPage />} />
+        <Route path={R.USER(":id")} element={<UserPage />} />
       </Route>
 
-      <Route path="*" element={<NotFound />} />
+      <Route path={R.NOT_FOUND} element={<NotFound />} />
     </Routes>
   );
 }

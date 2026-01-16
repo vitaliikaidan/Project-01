@@ -13,4 +13,6 @@ export const ROUTES = {
   
   NOT_FOUND: "*",
   PRODUCT: (id: string | number) => `/products/${id}`,
+  USERS: "/users",
+  USER: (id: string | number) => `/users/${id}`,
 } as const;

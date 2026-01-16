@@ -30,6 +30,9 @@ export default function NavBar() {
       <NavLink to={R.PROFILE} className={navLinkClass}>
         Profile
       </NavLink>
+      <NavLink to={R.USERS} className={navLinkClass}>
+        Users
+      </NavLink>
     </nav>
   );
 }
